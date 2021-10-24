@@ -9,11 +9,11 @@
 <h1 align="center">Minha Rua</h1>
 
 <p align="center">
-  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/thiilins/minha-rua?style=for-the-badge">
+  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/thiilins/minha-rua?style=for-the-badge&color=E9687D">
 
-  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/thiilins/minha-rua?style=for-the-badge">
+  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/thiilins/minha-rua?style=for-the-badge&color=E9687D">
 
-  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/thiilins/minha-rua?style=for-the-badge">
+  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/thiilins/minha-rua?style=for-the-badge&color=E9687D">
 
 </p>
 
