@@ -1,4 +1,4 @@
-<div align="center" id="top"> 
+<div align="center" id="top">
   <img src="./.github/preview.gif" alt="Minha Rua" />
 
 &#xa0;
@@ -45,10 +45,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [HTML5]()
 - [CSS3]()
 - [JavaScript]()
-- [Axios](https://axios-http.com/)
-- [Node.js](https://nodejs.org/en/)
-- [ExpressJS](https://expressjs.com/pt-br/)
-  <br>
   <br>
 
 ## :white_check_mark: Pré requisitos
@@ -67,19 +63,6 @@ $ git clone https://github.com/thiilins/minha-rua
 $ cd minha-rua
 $ code .
 # Rode via live server a pasta frontend
-
-##### Para iniciar o backend
-
-# Entre na pasta
-$ cd minha-rua/backend
-
-# Instale as dependências
-$ npm install
-
-# Para iniciar o projeto
-$ npm start
-
-# O backend vai inicializar em <http://localhost:8000>
 
 ```
 
