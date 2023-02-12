@@ -1,19 +1,20 @@
 <div align="center" id="top">
-  <img src="./.github/preview.gif" alt="Minha Rua" />
+  <img src="./.github/assets/cover.png" alt="Minha Rua" />
 
 &#xa0;
 
-  <!-- <a href="https://minharua.netlify.com">Demo</a> -->
+<a href="https://tl-minha-rua.surge.sh/">Demo</a>
+
 </div>
 
 <h1 align="center">Minha Rua</h1>
 
 <p align="center">
-  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/thiilins/minha-rua?style=for-the-badge&color=E9687D">
+  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/thiilins/minha-rua?style=for-the-badge&color=FF5858">
 
-  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/thiilins/minha-rua?style=for-the-badge&color=E9687D">
+  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/thiilins/minha-rua?style=for-the-badge&color=FF5858">
 
-  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/thiilins/minha-rua?style=for-the-badge&color=E9687D">
+  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/thiilins/minha-rua?style=for-the-badge&color=FF5858">
 
 </p>
 
@@ -26,10 +27,6 @@
   <a href="https://github.com/thiilins" target="_blank">Autor</a>
 </p>
 
-<br>
-
- <img src="./.github/screenshot.png" alt="Minha Rua" />
-<br>
 <br>
 
 ## :dart: Sobre
