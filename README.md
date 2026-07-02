@@ -3,7 +3,7 @@
 
 &#xa0;
 
-<a href="https://tl-minha-rua.surge.sh/">Demo</a>
+<a href="https://tl-minha-rua.surge.sh/">Demo (v1)</a> | <a href="https://tl-minha-rua-v2.surge.sh/">Preview (v2)</a>
 
 </div>
 
