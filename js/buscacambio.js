@@ -8,12 +8,16 @@ const dashboardCards = document.querySelector("#dashboard-cards");
 
 // Initialize page
 document.addEventListener("DOMContentLoaded", async () => {
-  // Set today's date as default
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const dd = String(today.getDate()).padStart(2, '0');
-  inputData.value = `${yyyy}-${mm}-${dd}`;
+  // Set yesterday (D-1) as default and max date
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yyyy = yesterday.getFullYear();
+  const mm = String(yesterday.getMonth() + 1).padStart(2, '0');
+  const dd = String(yesterday.getDate()).padStart(2, '0');
+  const maxDate = `${yyyy}-${mm}-${dd}`;
+  
+  inputData.value = maxDate;
+  inputData.max = maxDate;
 
   await fetchMoedas();
 });
