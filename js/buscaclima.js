@@ -1,5 +1,6 @@
 const inputCidade = document.getElementById("cidade");
 const btnBuscar = document.getElementById("btn-buscar");
+const btnGps = document.getElementById("btn-gps");
 const loading = document.getElementById("loading");
 const errorMsg = document.getElementById("error-msg");
 const citySelector = document.getElementById("city-selector");
@@ -50,6 +51,46 @@ function getIcon(sigla) {
 btnBuscar.addEventListener("click", () => searchCities(inputCidade.value));
 inputCidade.addEventListener("keypress", (e) => {
   if (e.key === "Enter") searchCities(e.target.value);
+});
+
+// GPS Reverse Geocoding
+btnGps.addEventListener("click", () => {
+  if (!navigator.geolocation) {
+    errorMsg.textContent = "Geolocalização não suportada no seu navegador.";
+    errorMsg.classList.remove("hidden");
+    return;
+  }
+
+  weatherResults.classList.add("hidden");
+  citySelector.classList.add("hidden");
+  errorMsg.classList.add("hidden");
+  loading.classList.remove("hidden");
+
+  navigator.geolocation.getCurrentPosition(
+    async (position) => {
+      const { latitude, longitude } = position.coords;
+      try {
+        const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+        if (!res.ok) throw new Error("Falha na API de localização.");
+        const data = await res.json();
+        
+        const city = data.address.city || data.address.town || data.address.village;
+        if (!city) throw new Error("Não foi possível identificar a cidade exata.");
+        
+        inputCidade.value = city;
+        searchCities(city);
+      } catch (err) {
+        loading.classList.add("hidden");
+        errorMsg.textContent = "Erro ao buscar a cidade pela localização.";
+        errorMsg.classList.remove("hidden");
+      }
+    },
+    (err) => {
+      loading.classList.add("hidden");
+      errorMsg.textContent = "Permissão de localização negada ou indisponível.";
+      errorMsg.classList.remove("hidden");
+    }
+  );
 });
 
 async function searchCities(query) {
