@@ -70,11 +70,11 @@ btnGps.addEventListener("click", () => {
     async (position) => {
       const { latitude, longitude } = position.coords;
       try {
-        const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+        const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=pt`);
         if (!res.ok) throw new Error("Falha na API de localização.");
         const data = await res.json();
         
-        const city = data.address.city || data.address.town || data.address.village;
+        const city = data.city || data.locality || data.principalSubdivision;
         if (!city) throw new Error("Não foi possível identificar a cidade exata.");
         
         inputCidade.value = city;

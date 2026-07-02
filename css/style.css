@@ -644,6 +644,9 @@ label {
   border-left-color: var(--primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+}
+
+.spinner-absolute {
   position: absolute;
   right: 16px;
 }
