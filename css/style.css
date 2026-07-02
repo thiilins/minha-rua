@@ -201,6 +201,7 @@ label {
 
 .input-content input {
   flex: 1;
+  min-width: 0;
   background: transparent;
   border: none;
   color: var(--text-main);
@@ -209,6 +210,18 @@ label {
   font-family: inherit;
   outline: none;
   width: 100%;
+}
+
+.input-content input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  padding-left: 8px;
+  margin-right: 2px;
+}
+
+.input-content input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
 }
 
 .input-content input::placeholder {
