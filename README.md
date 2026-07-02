@@ -46,19 +46,21 @@ Totalmente integrado à **[Brasil API](https://brasilapi.com.br/)**, o projeto f
 
 O Minha Rua é um verdadeiro **canivete suíço de consultas públicas**, rodando de forma instantânea:
 
+### Destaque (Página Inicial)
+- ⛈️ **Clima & Tempo:** Previsão meteorológica completa do CPTEC para os próximos dias com interface gráfica premium, ícones dinâmicos e auto-localização por GPS nativo.
+
 ### Consultas Cadastrais
-- 📍 **Busca de CEP:** Retorna Logradouro, Bairro, Cidade e UF.
+- 📍 **Busca de CEP:** Retorna Logradouro, Bairro, Cidade e UF instantaneamente.
 - 🏢 **Busca de CNPJ:** Identificação, Situação Cadastral, CNAE e Contato em tempo real.
 - ☎️ **DDD Cidades:** Descubra quais cidades pertencem a um DDD ou o DDD de um estado.
 
 ### Finanças
-- 📊 **Taxas (Econômicas):** Acompanhe a Taxa Selic, CDI e IPCA do dia.
+- 📊 **Taxas (Econômicas):** Acompanhe a Taxa Selic, CDI e IPCA do dia em tempo real.
 - 💵 **Câmbio:** Cotações diárias de moedas estrangeiras em formato de dashboard.
 - 🏦 **Bancos PIX & Cód. Bancos:** Encontre o ISPB dos bancos e veja quais aceitam PIX.
 
 ### Serviços & Utilidades
-- ⛈️ **Clima & Tempo:** Previsão meteorológica completa do CPTEC para os próximos dias com interface gráfica animada.
-- 📦 **Rastreio de Correios:** Acompanhe suas encomendas em uma linha do tempo vertical bonita.
+- 📦 **Rastreio de Correios:** Acompanhe suas encomendas em uma linha do tempo vertical visual.
 - 🧮 **Busca NCM:** Pesquise impostos/produtos para notas fiscais.
 - 🌐 **Domínios BR:** Veja se um domínio está disponível no Registro.br e receba sugestões.
 - 📚 **ISBN de Livros:** Puxe os dados completos (autor, capa, páginas) digitando o código do livro.
