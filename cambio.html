@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de Câmbio - Minha Rua</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Menu -->
+    <nav class="top-nav">
+      <a href="index.html" class="nav-link">
+        <i class="ph ph-map-pin-line"></i> Busca CEP
+      </a>
+      <a href="cnpj.html" class="nav-link">
+        <i class="ph ph-buildings"></i> Busca CNPJ
+      </a>
+      <a href="dominio.html" class="nav-link">
+        <i class="ph ph-globe"></i> Busca Domínio
+      </a>
+      <a href="cambio.html" class="nav-link active">
+        <i class="ph ph-currency-circle-dollar"></i> Câmbio
+      </a>
+    </nav>
+
+    <main class="container">
+      <header class="header">
+        <div class="icon-wrapper">
+          <i class="ph ph-currency-circle-dollar"></i>
+        </div>
+        <h1>Dashboard de Câmbio</h1>
+        <p>Acompanhe as cotações de moedas estrangeiras ao longo do dia.</p>
+      </header>
+
+      <div class="inputs-grid">
+        <div class="group-row">
+          <div class="group flex-2">
+            <label for="moeda">Moeda</label>
+            <div class="input-content">
+              <i class="ph ph-coins"></i>
+              <select id="moeda" style="flex: 1; border: none; background: transparent; font-family: inherit; font-size: 16px; font-weight: 600; outline: none; color: var(--text-main);">
+                <option value="" disabled selected>Carregando moedas...</option>
+              </select>
+            </div>
+          </div>
+          <div class="group flex-1">
+            <label for="data_cotacao">Data</label>
+            <div class="input-content">
+              <i class="ph ph-calendar"></i>
+              <input type="date" id="data_cotacao" />
+            </div>
+          </div>
+        </div>
+
+        <button id="btn-buscar" style="background: var(--primary); color: white; border: none; padding: 16px; border-radius: 16px; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; display: flex; justify-content: center; align-items: center; gap: 8px;">
+          <i class="ph ph-magnifying-glass"></i> Buscar Cotações
+        </button>
+
+        <div style="position: relative; display: flex; justify-content: center; height: 24px; margin-top: -10px;">
+           <div id="loading" class="spinner hidden" style="position: relative; right: auto;"></div>
+        </div>
+        
+        <span id="error-msg" class="error-msg hidden" style="text-align: center;">Erro ao buscar cotação.</span>
+
+        <div class="results-container hidden" id="results" style="padding-top: 10px;">
+          <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 4px;">Boletins do Dia</h3>
+          <div class="dashboard-grid" id="dashboard-cards">
+            <!-- Cards will be injected here via JS -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/buscacambio.js"></script>
+  </body>
+</html>

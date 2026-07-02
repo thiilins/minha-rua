@@ -322,6 +322,87 @@ label {
   color: #636e72;
 }
 
+/* Dashboard Cards for Câmbio */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (min-width: 481px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card-cotacao {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: 1px solid var(--input-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-cotacao:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.1);
+  border-color: var(--primary);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed var(--input-border);
+  padding-bottom: 8px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.card-time {
+  font-size: 12px;
+  color: #a4b0be;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-value-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.card-value {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.value-compra { color: var(--success); }
+.value-venda { color: var(--primary); }
+
 /* Loading Spinner */
 .spinner {
   width: 24px;
