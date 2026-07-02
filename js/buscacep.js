@@ -44,7 +44,10 @@ const fetchAddress = async (cep) => {
     const response = await fetch(URL_TO_FETCH, { method: "GET" });
     
     if (!response.ok) {
-      throw new Error('CEP não encontrado');
+      if (response.status === 429) {
+        throw new Error('Muitas consultas. Aguarde um momento e tente novamente.');
+      }
+      throw new Error('CEP não encontrado ou inválido.');
     }
 
     const data = await response.json();
@@ -61,6 +64,7 @@ const fetchAddress = async (cep) => {
 
   } catch (err) {
     console.error("Erro ao buscar o CEP:", err);
+    errorMsg.textContent = err.message;
     errorMsg.classList.remove("hidden");
     inputCep.parentElement.style.borderColor = "var(--error)";
     

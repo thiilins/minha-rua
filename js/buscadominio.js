@@ -50,9 +50,11 @@ const fetchDomainInfo = async (domain) => {
   try {
     const response = await fetch(URL_TO_FETCH, { method: "GET" });
     
-    // 400 or 404 might just mean it's available or invalid format depending on the API
     if (!response.ok && response.status !== 404 && response.status !== 400) {
-      throw new Error('Erro na busca do domínio');
+      if (response.status === 429) {
+        throw new Error('Muitas consultas. Aguarde um momento e tente novamente.');
+      }
+      throw new Error('Erro na busca do domínio.');
     }
 
     const data = await response.json();
@@ -102,6 +104,7 @@ const fetchDomainInfo = async (domain) => {
 
   } catch (err) {
     console.error("Erro ao buscar o Domínio:", err);
+    errorMsg.textContent = err.message;
     errorMsg.classList.remove("hidden");
     inputDominio.parentElement.style.borderColor = "var(--error)";
   } finally {

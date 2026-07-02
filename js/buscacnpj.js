@@ -51,7 +51,10 @@ const fetchCnpjInfo = async (cnpj) => {
     const response = await fetch(URL_TO_FETCH, { method: "GET" });
     
     if (!response.ok) {
-      throw new Error('CNPJ não encontrado ou inválido');
+      if (response.status === 429) {
+        throw new Error('Muitas consultas. Aguarde um momento e tente novamente.');
+      }
+      throw new Error('CNPJ não encontrado ou inválido.');
     }
 
     const data = await response.json();
@@ -89,6 +92,7 @@ const fetchCnpjInfo = async (cnpj) => {
 
   } catch (err) {
     console.error("Erro ao buscar o CNPJ:", err);
+    errorMsg.textContent = err.message;
     errorMsg.classList.remove("hidden");
     inputCnpj.parentElement.style.borderColor = "var(--error)";
     
