@@ -5,7 +5,6 @@ const urlsToCache = [
   './cnpj.html',
   './dominio.html',
   './cambio.html',
-  './fipe.html',
   './isbn.html',
   './pix.html',
   './feriados.html',
