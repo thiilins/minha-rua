@@ -3,14 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Busca CEP - Minha Rua</title>
+    <title>Feriados Nacionais - Minha Rua</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ff6b6b">
-    <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/theme.js" defer></script>
@@ -27,14 +25,14 @@
         <button class="sidebar-close" id="close-sidebar"><i class="ph ph-x"></i></button>
       </div>
       <nav class="sidebar-nav">
-        <a href="index.html" class="nav-item active"><i class="ph ph-map-pin-line"></i> Busca CEP</a>
+        <a href="index.html" class="nav-item"><i class="ph ph-map-pin-line"></i> Busca CEP</a>
         <a href="cnpj.html" class="nav-item"><i class="ph ph-buildings"></i> Busca CNPJ</a>
         <a href="dominio.html" class="nav-item"><i class="ph ph-globe"></i> Domínios BR</a>
         <a href="cambio.html" class="nav-item"><i class="ph ph-currency-circle-dollar"></i> Câmbio</a>
         <a href="fipe.html" class="nav-item"><i class="ph ph-car"></i> Tabela FIPE</a>
         <a href="isbn.html" class="nav-item"><i class="ph ph-book"></i> ISBN Livros</a>
         <a href="pix.html" class="nav-item"><i class="ph ph-qr-code"></i> PIX Bancos</a>
-        <a href="feriados.html" class="nav-item"><i class="ph ph-calendar-blank"></i> Feriados</a>
+        <a href="feriados.html" class="nav-item active"><i class="ph ph-calendar-blank"></i> Feriados</a>
         <a href="bancos.html" class="nav-item"><i class="ph ph-bank"></i> Bancos</a>
         <a href="ddd.html" class="nav-item"><i class="ph ph-phone"></i> DDD Cidades</a>
         
@@ -54,67 +52,44 @@
     <main class="main-content">
       <header class="mobile-header">
         <button class="mobile-toggle" id="open-sidebar"><i class="ph ph-list"></i></button>
-        <span class="mobile-title">Busca CEP</span>
+        <span class="mobile-title">Feriados Nacionais</span>
       </header>
       
       <div class="content-wrapper">
-        <!-- Main Container -->
         <main class="container">
-        <div class="icon-wrapper">
-          <i class="ph ph-map-pin-line"></i>
-        </div>
-        <h1>Busca CEP</h1>
-        <p>Encontre o endereço de qualquer lugar no Brasil, de forma rápida e simples.</p>
-      </header>
-
-      <div class="inputs-grid">
-        <div class="group group-main">
-          <label for="cep">CEP</label>
-          <div class="input-content">
-            <i class="ph ph-magnifying-glass"></i>
-            <input type="text" id="cep" placeholder="00000-000" maxlength="9" autocomplete="off" />
-            <div id="loading" class="spinner hidden"></div>
-          </div>
-          <span id="error-msg" class="error-msg hidden">CEP não encontrado.</span>
-        </div>
-
-        <div class="results-container hidden" id="results">
-          <div class="group">
-            <label for="rua">Logradouro (Rua)</label>
-            <div class="input-content">
-              <i class="ph ph-road-horizon"></i>
-              <input type="text" id="rua" readonly />
+          <header class="header">
+            <div class="icon-wrapper">
+              <i class="ph ph-calendar-star"></i>
             </div>
-          </div>
-          <div class="group">
-            <label for="bairro">Bairro</label>
-            <div class="input-content">
-              <i class="ph ph-map-trifold"></i>
-              <input type="text" id="bairro" readonly />
-            </div>
-          </div>
-          <div class="group-row">
-            <div class="group flex-2">
-              <label for="cidade">Cidade</label>
+            <h1>Feriados Nacionais</h1>
+            <p>Lista dos feriados nacionais oficiais do Brasil.</p>
+          </header>
+
+          <div class="inputs-grid">
+            <div class="group group-main">
+              <label for="ano">Ano Base</label>
               <div class="input-content">
-                <i class="ph ph-city"></i>
-                <input type="text" id="cidade" readonly />
+                <i class="ph ph-calendar-blank"></i>
+                <input type="number" id="ano" min="1900" max="2199" placeholder="Ex: 2024" autocomplete="off" />
               </div>
+              <span id="error-msg" class="error-msg hidden">Ano inválido ou dados não encontrados.</span>
             </div>
-            <div class="group flex-1">
-              <label for="UF">UF</label>
-              <div class="input-content">
-                <i class="ph ph-flag"></i>
-                <input type="text" id="UF" readonly />
+
+            <!-- Loading -->
+            <div style="position: relative; display: flex; justify-content: center; height: 24px; margin-top: -10px;">
+              <div id="loading" class="spinner hidden" style="position: relative; right: auto;"></div>
+            </div>
+
+            <div class="results-container hidden" id="results" style="border: none; padding-top: 0;">
+              <div class="dashboard-grid" id="feriados-grid">
+                <!-- Cards injected here -->
               </div>
             </div>
           </div>
-        </div>
-      </div>
-        </div>
+        </main>
       </div>
     </main>
 
-    <script src="js/buscacep.js"></script>
+    <script src="js/buscaferiados.js"></script>
   </body>
 </html>
