@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Busca Domínio - Minha Rua</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Menu -->
+    <nav class="top-nav">
+      <a href="index.html" class="nav-link">
+        <i class="ph ph-map-pin-line"></i> Busca CEP
+      </a>
+      <a href="cnpj.html" class="nav-link">
+        <i class="ph ph-buildings"></i> Busca CNPJ
+      </a>
+      <a href="dominio.html" class="nav-link active">
+        <i class="ph ph-globe"></i> Busca Domínio
+      </a>
+    </nav>
+
+    <main class="container">
+      <header class="header">
+        <div class="icon-wrapper">
+          <i class="ph ph-globe"></i>
+        </div>
+        <h1>Busca Domínio</h1>
+        <p>Consulte a situação e disponibilidade de domínios terminados em .br</p>
+      </header>
+
+      <div class="inputs-grid">
+        <div class="group group-main">
+          <label for="dominio">Domínio (ex: google.com.br)</label>
+          <div class="input-content">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" id="dominio" placeholder="exemplo.com.br" autocomplete="off" />
+            <div id="loading" class="spinner hidden"></div>
+          </div>
+          <span id="error-msg" class="error-msg hidden">Domínio não encontrado ou erro na busca.</span>
+        </div>
+
+        <div class="results-container hidden" id="results">
+          <div class="group-row">
+            <div class="group flex-2">
+              <label for="fqdn">Domínio Consultado</label>
+              <div class="input-content">
+                <i class="ph ph-browser"></i>
+                <input type="text" id="fqdn" readonly />
+              </div>
+            </div>
+            <div class="group flex-1">
+              <label for="status">Status</label>
+              <div class="input-content">
+                <i class="ph ph-shield-check"></i>
+                <input type="text" id="status" readonly />
+              </div>
+            </div>
+          </div>
+
+          <div class="group-row">
+            <div class="group flex-1">
+              <label for="expires">Expira em</label>
+              <div class="input-content">
+                <i class="ph ph-calendar"></i>
+                <input type="text" id="expires" readonly />
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <label for="hosts">Servidores DNS (Hosts)</label>
+            <div class="input-content">
+              <i class="ph ph-hard-drives"></i>
+              <input type="text" id="hosts" readonly />
+            </div>
+          </div>
+
+          <div class="group" id="group-suggestions">
+            <label for="suggestions">Sugestões de Extensões</label>
+            <div class="input-content">
+              <i class="ph ph-lightbulb"></i>
+              <input type="text" id="suggestions" readonly />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <script src="js/buscadominio.js"></script>
+  </body>
+</html>
