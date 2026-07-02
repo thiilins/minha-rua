@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Busca CEP - Minha Rua</title>
+    <title>Busca CNPJ - Minha Rua</title>
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,10 @@
   <body>
     <!-- Top Navigation Menu -->
     <nav class="top-nav">
-      <a href="index.html" class="nav-link active">
+      <a href="index.html" class="nav-link">
         <i class="ph ph-map-pin-line"></i> Busca CEP
       </a>
-      <a href="cnpj.html" class="nav-link">
+      <a href="cnpj.html" class="nav-link active">
         <i class="ph ph-buildings"></i> Busca CNPJ
       </a>
     </nav>
@@ -26,38 +26,49 @@
     <main class="container">
       <header class="header">
         <div class="icon-wrapper">
-          <i class="ph ph-map-pin-line"></i>
+          <i class="ph ph-buildings"></i>
         </div>
-        <h1>Busca CEP</h1>
-        <p>Encontre o endereço de qualquer lugar no Brasil, de forma rápida e simples.</p>
+        <h1>Busca CNPJ</h1>
+        <p>Acesse rapidamente os dados públicos de qualquer empresa brasileira.</p>
       </header>
 
       <div class="inputs-grid">
         <div class="group group-main">
-          <label for="cep">CEP</label>
+          <label for="cnpj">CNPJ</label>
           <div class="input-content">
             <i class="ph ph-magnifying-glass"></i>
-            <input type="text" id="cep" placeholder="00000-000" maxlength="9" autocomplete="off" />
+            <input type="text" id="cnpj" placeholder="00.000.000/0000-00" maxlength="18" autocomplete="off" />
             <div id="loading" class="spinner hidden"></div>
           </div>
-          <span id="error-msg" class="error-msg hidden">CEP não encontrado.</span>
+          <span id="error-msg" class="error-msg hidden">CNPJ não encontrado ou inválido.</span>
         </div>
 
         <div class="results-container hidden" id="results">
           <div class="group">
-            <label for="rua">Logradouro (Rua)</label>
+            <label for="razao_social">Razão Social</label>
             <div class="input-content">
-              <i class="ph ph-road-horizon"></i>
-              <input type="text" id="rua" readonly />
+              <i class="ph ph-briefcase"></i>
+              <input type="text" id="razao_social" readonly />
             </div>
           </div>
-          <div class="group">
-            <label for="bairro">Bairro</label>
-            <div class="input-content">
-              <i class="ph ph-map-trifold"></i>
-              <input type="text" id="bairro" readonly />
+          
+          <div class="group-row">
+            <div class="group flex-2">
+              <label for="nome_fantasia">Nome Fantasia</label>
+              <div class="input-content">
+                <i class="ph ph-storefront"></i>
+                <input type="text" id="nome_fantasia" readonly />
+              </div>
+            </div>
+            <div class="group flex-1">
+              <label for="situacao">Situação</label>
+              <div class="input-content">
+                <i class="ph ph-info"></i>
+                <input type="text" id="situacao" readonly />
+              </div>
             </div>
           </div>
+
           <div class="group-row">
             <div class="group flex-2">
               <label for="cidade">Cidade</label>
@@ -67,10 +78,10 @@
               </div>
             </div>
             <div class="group flex-1">
-              <label for="UF">UF</label>
+              <label for="uf">UF</label>
               <div class="input-content">
                 <i class="ph ph-flag"></i>
-                <input type="text" id="UF" readonly />
+                <input type="text" id="uf" readonly />
               </div>
             </div>
           </div>
@@ -78,6 +89,6 @@
       </div>
     </main>
 
-    <script src="js/buscacep.js"></script>
+    <script src="js/buscacnpj.js"></script>
   </body>
 </html>
