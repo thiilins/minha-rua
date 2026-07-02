@@ -10,9 +10,17 @@ const urlsToCache = [
   './feriados.html',
   './bancos.html',
   './ddd.html',
+  './taxas.html',
+  './clima.html',
+  './rastreio.html',
+  './ncm.html',
   './css/style.css',
   './js/sidebar.js',
-  './js/theme.js'
+  './js/theme.js',
+  './js/buscataxas.js',
+  './js/buscaclima.js',
+  './js/buscarastreio.js',
+  './js/buscancm.js'
 ];
 
 self.addEventListener('install', event => {

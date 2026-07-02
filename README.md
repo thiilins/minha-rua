@@ -44,29 +44,25 @@ Totalmente integrado à **[Brasil API](https://brasilapi.com.br/)**, o projeto f
 
 ## :sparkles: Funcionalidades Principais
 
-Aqui estão os 4 pilares de consulta disponíveis hoje na plataforma:
+O Minha Rua é um verdadeiro **canivete suíço de consultas públicas**, rodando de forma instantânea:
 
-### 1. 📍 Busca Avançada de CEP
-Digite o CEP e o sistema retorna instantaneamente o **Logradouro, Bairro, Cidade e Estado (UF)**. Tudo utilizando um recurso de preenchimento inteligente (sem precisar clicar em botão de busca, o fetch ocorre assim que o 8º dígito é inserido).
+### Consultas Cadastrais
+- 📍 **Busca de CEP:** Retorna Logradouro, Bairro, Cidade e UF.
+- 🏢 **Busca de CNPJ:** Identificação, Situação Cadastral, CNAE e Contato em tempo real.
+- ☎️ **DDD Cidades:** Descubra quais cidades pertencem a um DDD ou o DDD de um estado.
 
-### 2. 🏢 Busca Detalhada de CNPJ
-Módulo completo para análise empresarial. Basta inserir o CNPJ e a tela exibirá:
-- **Identificação:** Razão Social e Nome Fantasia.
-- **Situação Cadastral:** Ativa, Inativa, etc.
-- **Operação:** Atividade Principal (CNAE) e Natureza Jurídica.
-- **Contato:** Telefone perfeitamente mascarado e Endereço Completo formatado em linha.
+### Finanças
+- 📊 **Taxas (Econômicas):** Acompanhe a Taxa Selic, CDI e IPCA do dia.
+- 💵 **Câmbio:** Cotações diárias de moedas estrangeiras em formato de dashboard.
+- 🏦 **Bancos PIX & Cód. Bancos:** Encontre o ISPB dos bancos e veja quais aceitam PIX.
 
-### 3. 🌐 Consulta de Domínios (.br)
-Empreendedores ou desenvolvedores querendo registrar uma nova marca?
-- Verifica em tempo real o status (`Registrado` ou `Disponível`) junto ao Registro.br.
-- Caso registrado, lista os **Servidores DNS (Hosts)** e a **Data de Expiração**.
-- O diferencial: a aplicação sugere proativamente **extensões alternativas disponíveis** (ex: `.app.br`, `.net.br`, etc) em formato de tags/chips elegantes.
-
-### 4. 💵 Dashboard de Câmbio Financeiro
-Para fechar o pacote, um painel financeiro para acompanhar variações monetárias diárias.
-- Lista completa e atualizada de moedas estrangeiras disponíveis para cotação no Brasil.
-- Calendário inteligente com bloqueio de datas futuras.
-- **Interface em Grade (Grid):** Exibição das cotações na forma de **Cartões (Cards)**, separando os valores exatos de **Compra e Venda** em cada um dos boletins do dia (Abertura, Intermediários e Fechamento PTAX).
+### Serviços & Utilidades
+- ⛈️ **Clima & Tempo:** Previsão meteorológica completa do CPTEC para os próximos dias com interface gráfica animada.
+- 📦 **Rastreio de Correios:** Acompanhe suas encomendas em uma linha do tempo vertical bonita.
+- 🧮 **Busca NCM:** Pesquise impostos/produtos para notas fiscais.
+- 🌐 **Domínios BR:** Veja se um domínio está disponível no Registro.br e receba sugestões.
+- 📚 **ISBN de Livros:** Puxe os dados completos (autor, capa, páginas) digitando o código do livro.
+- 🏖️ **Feriados:** Lista de feriados nacionais do ano escolhido.
 
 ---
 
