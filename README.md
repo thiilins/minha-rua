@@ -46,6 +46,12 @@ O projeto agora atua como um canivete suíço de consultas públicas, utilizando
 
 <br>
 
+## :art: Layout Global (Dashboard)
+
+O projeto foi desenhado para atuar como um verdadeiro **SaaS (Software as a Service)**. Utilizando contêineres expansíveis de até **800px** com sistema de colunas (`CSS Grid` e `Flexbox`), as interfaces fogem do visual de "widget" enlatado e ganham espaço de tela, garantindo que as informações densas (como as várias cotações e listas de domínios) se distribuam de forma fluida e profissional em qualquer resolução.
+
+<br>
+
 ## :rocket: Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
