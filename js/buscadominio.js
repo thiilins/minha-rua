@@ -79,13 +79,32 @@ const fetchDomainInfo = async (domain) => {
         inputExpires.value = 'Não informada';
       }
 
-      inputHosts.value = data.hosts ? data.hosts.join(', ') : 'Não informado';
+      // Format Hosts as chips
+      inputHosts.innerHTML = '';
+      if (data.hosts && data.hosts.length > 0) {
+        data.hosts.forEach(host => {
+          const chip = document.createElement('div');
+          chip.className = 'chip host';
+          chip.innerHTML = `<i class="ph ph-hard-drives"></i> ${host}`;
+          inputHosts.appendChild(chip);
+        });
+      } else {
+        inputHosts.innerHTML = `<div class="chip host">Não informado</div>`;
+      }
       
-      // Hide suggestions if registered and no suggestions
+      // Suggestions formatting
       if(data.suggestions && data.suggestions.length > 0) {
         groupSuggestions.classList.remove("hidden");
+        inputSuggestions.innerHTML = '';
         const domainBase = data.fqdn.split('.')[0];
-        inputSuggestions.value = data.suggestions.slice(0, 5).map(ext => `${domainBase}.${ext}`).join(', ') + '...';
+        
+        // Take top 8 suggestions
+        data.suggestions.slice(0, 8).forEach(ext => {
+          const chip = document.createElement('div');
+          chip.className = 'chip';
+          chip.innerHTML = `<i class="ph ph-check-circle"></i> ${domainBase}.${ext}`;
+          inputSuggestions.appendChild(chip);
+        });
       } else {
         groupSuggestions.classList.add("hidden");
       }
@@ -95,7 +114,7 @@ const fetchDomainInfo = async (domain) => {
       inputDominio.parentElement.style.borderColor = "var(--success)"; // Available = Green
       inputStatus.style.color = "var(--success)";
       inputExpires.value = '-';
-      inputHosts.value = '-';
+      inputHosts.innerHTML = '';
       groupSuggestions.classList.add("hidden");
     }
 
